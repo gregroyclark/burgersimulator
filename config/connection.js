@@ -2,6 +2,7 @@ const mysql = require("mysql");
 const dotenv = require("dotenv");
 
 const connection = mysql.createConnection({
+  //pulls connection info from .env
   host: process.env.host,
   port: process.env.host,
   user: process.env.user,
@@ -18,5 +19,5 @@ connection.connect(function(err) {
   console.log("connected as id " + connection.threadId);
 });
 
-// Export connection for our ORM to use.
+// Export connection for ORM to use.
 module.exports = connection;
