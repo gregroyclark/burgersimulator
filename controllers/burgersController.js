@@ -1,8 +1,8 @@
-const express = require("express");
+var express = require("express");
 
-const router = express.Router();
+var router = express.Router();
 
-const burger = require("../models/burger.js");
+var burger = require("../models/burger.js");
 
 router.get("/", function(req, res) {
    burger.all(function(data) {
@@ -14,3 +14,10 @@ router.get("/", function(req, res) {
    });
 });
 
+router.post("/api/burgers", function(req, res) {
+  burger.create([
+    "", ""
+  ], [
+    req.body.name, req.body.  
+  ])  
+})

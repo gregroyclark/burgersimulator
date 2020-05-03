@@ -1,2 +1,2 @@
-const connection = require("../config/connection.js");
+var connection = require("../config/connection.js");
 
