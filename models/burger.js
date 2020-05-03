@@ -1,5 +1,6 @@
 const orm = require("../config/orm.js");
 
+//database functions
 let burger = {
     all: function(cb) {
       orm.all("burgers", function(res) {
@@ -23,4 +24,5 @@ let burger = {
     }
   };
 
+  //export database functions
   module.exports = burger;
