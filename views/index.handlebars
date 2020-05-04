@@ -1,0 +1,12 @@
+<h1>burgersimulator</h1>
+
+<h2>Burgers!</h2>
+
+<ul>
+   {{#each burgers}}
+     {{#unless eaten}}
+       {{> burgers/burger-block eaten=true}}
+     {{/unless}}
+   {{/each}}
+</ul>
+
