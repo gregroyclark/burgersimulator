@@ -1,5 +1,6 @@
 var connection = require("../config/connection.js");
 
+//Translates SQL
 function printQuestionMarks(num) {
     var arr = [];
   
@@ -19,12 +20,12 @@ function printQuestionMarks(num) {
       var value = ob[key];
       // check to skip hidden properties
       if (Object.hasOwnProperty.call(ob, key)) {
-        // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+        // if string with spaces, add quotations
         if (typeof value === "string" && value.indexOf(" ") >= 0) {
           value = "'" + value + "'";
         }
-        // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-        // e.g. {sleepy: true} => ["sleepy=true"]
+        // e.g. {name: 'sandwich'} => ["name='sandwich'"]
+        // e.g. {eaten: true} => ["eaten=true"]
         arr.push(key + "=" + value);
       }
     }
@@ -64,7 +65,7 @@ function printQuestionMarks(num) {
         cb(result);
       });
     },
-    // An example of objColVals would be {name: panther, sleepy: true}
+    // An example of objColVals would be {name: mcgriddle, eaten: true}
     update: function(table, objColVals, condition, cb) {
       var queryString = "UPDATE " + table;
   
@@ -97,5 +98,5 @@ function printQuestionMarks(num) {
     }
   };
   
-  // Export the orm object for the model (cat.js).
+  // Export the orm object for the model (burger.js).
   module.exports = orm;
