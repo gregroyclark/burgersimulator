@@ -13,10 +13,18 @@ $(function() {
     }).then(
       function() {
         console.log("changed eaten to", newEat);
-        location.reload();  
+        location.reload();
       }
     );
   });
 
-  
+  $(".create-form").on("submit", function(event) {
+    event.preventDefault();
+
+    var newBurger = {
+      name: $("#bu").val().trim(),
+      eaten: $("[name=eaten]:checked").val().trim()
+    };
+  })
+
 });
