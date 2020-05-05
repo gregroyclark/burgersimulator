@@ -34,7 +34,9 @@ $(function() {
         console.log("you made a burger");
         location.reload();
       }
-    )
-  })
+    );
+  });
+
+  
 
 });
