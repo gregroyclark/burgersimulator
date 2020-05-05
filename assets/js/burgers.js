@@ -25,6 +25,16 @@ $(function() {
       name: $("#bu").val().trim(),
       eaten: $("[name=eaten]:checked").val().trim()
     };
+
+    $.ajax("/api/burgers", {
+      type: "POST",
+      data: newBurger
+    }).then(
+      function() {
+        console.log("you made a burger");
+        location.reload();
+      }
+    )
   })
 
 });
