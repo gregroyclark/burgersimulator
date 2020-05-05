@@ -1,4 +1,4 @@
-var connection = require("../config/connection.js");
+var connection = require("./connection.js");
 
 //Translates SQL
 function printQuestionMarks(num) {
