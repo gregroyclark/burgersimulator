@@ -13,7 +13,7 @@ router.post("/api/burgers", function(req, res) {
 });
 
 router.get("/", function(req, res) {
-  burger.all(function(data) {
+  burger.selectAll(function(data) {
     var hbsObject = {
       burgers: data  
     };
