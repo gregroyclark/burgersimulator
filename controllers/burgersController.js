@@ -16,7 +16,7 @@ router.post("/api/burgers", function(req, res) {
 
 router.get("/", function(req, res) {
   orm.selectAll(function(data) {
-    let hbsObject = {
+    var hbsObject = {
       burgers: data  
     };
     console.log(hbsObject);
